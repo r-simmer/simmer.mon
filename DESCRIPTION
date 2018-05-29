@@ -1,0 +1,23 @@
+Package: simmer.mon
+Type: Package
+Title: Monitoring Backends for 'simmer'
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Iñaki", "Ucar", email="i.ucar86@gmail.com", 
+      role=c("aut", "cph", "cre"), comment=c(ORCID="0000-0001-6403-5550")))
+Description: Provides additional monitoring backends for 'simmer', e.g., the
+    ability to connect the simulation output to a database.
+License: MIT + file LICENSE
+Encoding: UTF-8
+URL: http://r-simmer.org, https://github.com/r-simmer/simmer.mon
+BugReports: https://github.com/r-simmer/simmer.mon/issues
+Depends:
+    R (>= 3.1.2),
+    simmer (>= 3.8.0.9000)
+Imports:
+    DBI
+LinkingTo:
+    Rcpp,
+    BH,
+    simmer
+RoxygenNote: 6.0.1
