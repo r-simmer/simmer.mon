@@ -1,6 +1,6 @@
 # <img src="https://raw.githubusercontent.com/r-simmer/r-simmer.github.io/master/images/simmer-logo.png" alt="simmer" width="200" />.mon
 
-[![Build Status](https://travis-ci.org/r-simmer/simmer.mon.svg?branch=master)](https://travis-ci.org/r-simmer/simmer.mon)
+[![build](https://github.com/r-simmer/simmer.mon/actions/workflows/build.yml/badge.svg)](https://github.com/r-simmer/simmer.mon/actions/workflows/build.yml)
 [![Status\_Badge](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 **simmer.mon** provides monitoring backends that can be attached to [**simmer**](http://r-simmer.org), the Discrete-Event Simulation (DES) package for R, to replace the default in-memory monitor:
