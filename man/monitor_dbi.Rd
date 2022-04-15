@@ -8,7 +8,7 @@ monitor_dbi(conn, auto_disconnect = FALSE, keep = FALSE)
 }
 \arguments{
 \item{conn}{A \linkS4class{DBIConnection} object, as returned by
-\code{\link[=dbConnect]{dbConnect()}}.}
+\code{\link[DBI:dbConnect]{dbConnect()}}.}
 
 \item{auto_disconnect}{whether the connection should be automatically closed
 when the monitor is deleted. Set to \code{TRUE} if you initialised the

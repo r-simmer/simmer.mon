@@ -42,7 +42,7 @@ monitor_dbi <- function(conn, auto_disconnect=FALSE, keep=FALSE) {
     function(xptr) do.call(DBI::dbReadTable, c(conn, tables[[3]])),
     function(xptr) do.call(DBI::dbReadTable, c(conn, tables[[4]])),
     tables,
-    function() {
+    function(...) {
       if(!keep) for (table in tables) DBI::dbRemoveTable(conn, table)
       if (auto_disconnect) DBI::dbDisconnect(conn)
     }
@@ -50,18 +50,7 @@ monitor_dbi <- function(conn, auto_disconnect=FALSE, keep=FALSE) {
 }
 
 get_fields <- function() {
-  t <- trajectory() %>%
-    set_attribute("attr", 0.1) %>%
-    seize("res") %>%
-    timeout(0.1) %>%
-    release("res")
-  
   mon <- monitor_mem()
-  simmer(mon=mon) %>%
-    add_resource("res") %>%
-    add_generator("dummy", t, at(0.1), mon=2) %>%
-    run()
-  
   list(
     arrivals = mon$get_arrivals(FALSE),
     releases = mon$get_arrivals(TRUE),

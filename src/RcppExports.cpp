@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // DBIMonitor__new
 SEXP DBIMonitor__new(const std::string& ends, const std::string& releases, const std::string& attributes, const std::string& resources, Function& dbClear, Function& dbAppend);
 RcppExport SEXP _simmer_mon_DBIMonitor__new(SEXP endsSEXP, SEXP releasesSEXP, SEXP attributesSEXP, SEXP resourcesSEXP, SEXP dbClearSEXP, SEXP dbAppendSEXP) {
