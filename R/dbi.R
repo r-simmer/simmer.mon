@@ -1,7 +1,7 @@
 #' Create a DBI Monitor
 #'
 #' Methods for creating database-backed (\pkg{DBI}-based) \code{monitor} objects.
-#' 
+#'
 #' @inheritParams DBI::dbCreateTable
 #' @param auto_disconnect whether the connection should be automatically closed
 #' when the monitor is deleted. Set to \code{TRUE} if you initialised the
@@ -30,7 +30,7 @@ monitor_dbi <- function(conn, auto_disconnect=FALSE, keep=FALSE) {
     }
   }
   dbClear()
-  
+
   monitor(
     "to database (DBI interface)",
     DBIMonitor__new(
